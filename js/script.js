@@ -61,7 +61,7 @@ function createNewLevel() {
 // берет случайный элемент из массива городов
 	const randomIndex = getRandomArbitrary(0, objectMas.length - 1);
 
-	// случайное число от 1 до 9 
+    // случайное число от 1 до 9
   const randomEmptyBox = getRandomArbitrary(1, 9);
   console.log(randomIndex, objectMas[randomIndex]);
   console.log('randomEmptyBox',randomEmptyBox);
@@ -72,7 +72,7 @@ function createNewLevel() {
 
   //  удаляет случайно выбранный элемент
   deleteBox(randomEmptyBox);
-		
+
 		// create list name
   loadWords(corentGameState.name);
   hz = []
@@ -103,10 +103,10 @@ $(document).on('keyup', function(event) {
 		// ["u", "a", "i"]
 
 
-		hz.push(event.key)	
-	    
+        hz.push(event.key)
+
 	    loadWords(corentGameState.name);
-		
+
 	} else {
 		// reduce score
 		COUNT_LEVEL -= 50
@@ -130,7 +130,7 @@ function count() {
 		COUNT_BOX = COUNT_BOX + 100;
 		console.log('score_level', COUNT_BOX);
 		return true;
-	} 
+    }
 	return false;
 }
 
@@ -165,8 +165,8 @@ function updateStatus(COUNT_LEVEL, COUNT_BOX) {
 
 function loadWords(aaaaa) {
 	$(containerWords).empty();
-	
-	aaaaa.split("").forEach(function(letter, index) {
+
+    aaaaa.split("").forEach(function (letter, index) {
 		const el = document.createElement("div");
 		el.className = 'words_item';
 
@@ -178,6 +178,10 @@ function loadWords(aaaaa) {
 
 		containerWords.appendChild(el)
 	})
+}
+
+function test() {
+    console.log('hello');
 }
 
 
