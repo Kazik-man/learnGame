@@ -1,0 +1,112 @@
+body {
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	background: url(../img/InformTechno.JPG) no-repeat fixed;
+	background-size: cover;
+}
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px 50px;
+}
+#next {
+	margin: 20px auto;
+	width: 100px;
+	height: 40px;
+	border-radius: 5px;
+}
+.header_right {
+	display: block;
+
+}
+.header_right > div {
+	width: 150px;
+	height: 30px;
+	border: 1px solid;
+	border-radius: 5px;
+	background: #fff;
+	margin: 10px 0;
+	font-size: 20px;
+	text-align: center;
+}
+
+#box {
+	width: 600px;
+	height: 600px;
+	border: 1px solid yellow;
+	margin: 0 auto;
+}
+.boxList {
+	width: 600px;
+	height: 600px;
+	position: relative;
+}
+.miniBox {
+	width: 200px;
+	height: 200px;
+	border: 1px solid yellow;
+	font-size: 50px;
+	text-align: center;
+	background: grey;
+	position: absolute;
+}
+
+#BG_game {
+	background-image: url('../img/ny.JPG');
+	background-size: cover;
+}
+
+.words {
+	display: flex;
+	justify-content: center;
+}
+
+.words_item {
+	height: 50px;
+	border: 1px solid yellow;
+	background: grey;
+	margin: 10px;
+	display: flex;
+	flex-basis: 50px;
+}
+
+
+
+.miniBox:nth-of-type(1) {
+	top: 0;
+	left: 0;
+}
+.miniBox:nth-of-type(2) {
+	top: 0;
+	left: 33%;
+}
+.miniBox:nth-of-type(3) {
+	top: 0;
+	left: 66%;
+}
+.miniBox:nth-of-type(4) {
+	top: 33%;
+	left: 0;
+}
+.miniBox:nth-of-type(5) {
+	top: 33%;
+	left: 33%;
+}
+.miniBox:nth-of-type(6) {
+	top: 33%;
+	left: 66%;
+}
+.miniBox:nth-of-type(7) {
+	top: 66%;
+	left: 0;
+}
+.miniBox:nth-of-type(8) {
+	top: 66%;
+	left: 33%;
+}
+.miniBox:nth-of-type(9) {
+	top: 66%;
+	left: 66%;
+}

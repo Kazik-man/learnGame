@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" http-equiv="Content-type" content="text/html">
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="./css/style.css" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+</head>
+<body>
+	<div class="header">
+		<div><button type="button" id="next" onclick="buttonClick()">Refresh</button></div>
+		<audio controls autoplay id="audio">
+			<source src="./music/dendi-8-bit-super-brat-ya-mario.mp3">
+			<source src="./music/8-bit-chip-i-deyl.mp3">
+			<source src="./music/dendi-8-bit-cherepashki-nindzya.mp3">
+		</audio>
+		<div class="header_right" style="color: red">
+			Score:<div id="score"></div>
+			Score Level:<div id="score_level"></div>
+			Cost box:<div id="cost_open_box"></div>
+		</div>
+	</div>
+	<div id="box">
+		<div class="boxList" id="BG_game">
+			<div class="miniBox" id="miniBox1">1</div>
+			<div class="miniBox" id="miniBox2">2</div>
+			<div class="miniBox" id="miniBox3">3</div>
+			<div class="miniBox" id="miniBox4">4</div>
+			<div class="miniBox" id="miniBox5">5</div>
+			<div class="miniBox" id="miniBox6">6</div>
+			<div class="miniBox" id="miniBox7">7</div>
+			<div class="miniBox" id="miniBox8">8</div>
+			<div class="miniBox" id="miniBox9">9</div>
+		</div>
+	</div>
+	<div id="words" class="words">
+
+	</div>
+</body>
+<script src="./js/script.js"></script>
+</html>
