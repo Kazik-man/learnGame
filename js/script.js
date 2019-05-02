@@ -44,6 +44,106 @@ const objectMas = [
         "name": "Stambule",
         "count": "700"
     },
+    {
+        "image": "./img/bel.jpg",
+        "name": "Belarus",
+        "count": "650"
+    },
+    {
+        "image": "./img/braziliya.jpg",
+        "name": "Brasilia",
+        "count": "350"
+    },
+    {
+        "image": "./img/bugatti.png",
+        "name": "Bugatti",
+        "count": "400"
+    },
+    {
+        "image": "./img/California.jpg",
+        "name": "California",
+        "count": "750"
+    },
+    {
+        "image": "./img/Dodge.jpg",
+        "name": "Dodge",
+        "count": "550"
+    },
+    {
+        "image": "./img/fallout.jpg",
+        "name": "fallout",
+        "count": "900"
+    },
+    {
+        "image": "./img/india.jpg",
+        "name": "India",
+        "count": "450"
+    },
+    {
+        "image": "./img/karpaty.jpg",
+        "name": "Karpaty",
+        "count": "650"
+    },
+    {
+        "image": "./img/krym.jpg",
+        "name": "krym",
+        "count": "350"
+    },
+    {
+        "image": "./img/lada.jpg",
+        "name": "lada",
+        "count": "300"
+    },
+    {
+        "image": "./img/lamborghini.jpg",
+        "name": "lamborghini",
+        "count": "500"
+    },
+    {
+        "image": "./img/mario.jpg",
+        "name": "mario",
+        "count": "400"
+    },
+    {
+        "image": "./img/phuket-thailand.jpg",
+        "name": "Thailand",
+        "count": "800"
+    },
+    {
+        "image": "./img/shevrolet.jpg",
+        "name": "shevrolet",
+        "count": "550"
+    },
+    {
+        "image": "./img/pacman.jpg",
+        "name": "pacman",
+        "count": "350"
+    },
+    {
+        "image": "./img/tanks.jpg",
+        "name": "tanks",
+        "count": "450"
+    },
+    {
+        "image": "./img/papay.jpg",
+        "name": "Papay",
+        "count": "500"
+    },
+    {
+        "image": "./img/porsche.jpg",
+        "name": "porsche",
+        "count": "450"
+    },
+    {
+        "image": "./img/matrix.jpg",
+        "name": "matrix",
+        "count": "600"
+    },
+    {
+        "image": "./img/contra.jpg",
+        "name": "contra",
+        "count": "700"
+    },
 ]
 
 let COUNT_SCORE = 0;
@@ -61,6 +161,7 @@ function createNewLevel() {
     // берет случайный элемент из массива городов
     const randomIndex = getRandomArbitrary(0, objectMas.length - 1);
 
+
     // случайное число от 1 до 9
     const randomEmptyBox = getRandomArbitrary(1, 9);
     console.log(randomIndex, objectMas[randomIndex]);
@@ -68,6 +169,12 @@ function createNewLevel() {
 
     // обьект случайного города
     corentGameState = objectMas[randomIndex];
+    objectMas.splice(randomIndex, 1);
+
+    if(objectMas == 0) {
+      alert("You don't have attempts :-((");
+    }
+
     bgZona.css("background-image", `url(${corentGameState.image})`);
     COUNT_LEVEL = corentGameState.count;
 
@@ -89,6 +196,7 @@ function getRandomArbitrary(min, max) {
 }
 
 initGame();
+
 
 $(document).on('keyup', function (event) {
     const currentName = corentGameState.name.toLowerCase(),
