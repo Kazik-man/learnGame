@@ -171,13 +171,15 @@ function createNewLevel() {
     corentGameState = objectMas[randomIndex];
     objectMas.splice(randomIndex, 1);
 
-    if(objectMas == 0) {
+    console.log(objectMas.length);
+    if(objectMas.length === 0) {
       alert("You don't have attempts :-((");
+      return;
     }
 
     bgZona.css("background-image", `url(${corentGameState.image})`);
     COUNT_LEVEL = corentGameState.count;
-
+    COUNT_LEVEL = 100;
     //  удаляет случайно выбранный элемент
     deleteBox(randomEmptyBox);
     hz = [];
