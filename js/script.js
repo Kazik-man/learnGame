@@ -148,7 +148,7 @@ const object = [
 
 let costBox = 0;
 let score = 0;
-let scoreLevel = object[randomCity]['count'];
+let scoreLevel = 0;
 
 function newGame() {
     $('.grey_box').show();
@@ -163,6 +163,8 @@ function newGame() {
 
     console.log(randomCity, object[randomCity]);
     console.log(randomBoxNumber);
+
+    scoreLevel = object[randomCity]['count'];
 }
 
 
@@ -182,7 +184,7 @@ function boxHide(hideRandomBox) {
     $('.grey_box').eq(hideRandomBox-1).hide();
 }
 
- $('.grey_box').on("click" function() {
+$('.grey_box').on("click", function () {
      costBoxLvl();
 });
 
