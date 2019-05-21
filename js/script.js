@@ -193,6 +193,6 @@ function costBoxLvl() {
     }
 }
 
-$('.Score').text(score);
-$('.ScoreLevel').text(scoreLevel);
-$('.CostBox').text(costBox);
+$('.score').text(score);
+$('.scoreLevel').text(scoreLevel);
+$('.costBox').text(costBox);
