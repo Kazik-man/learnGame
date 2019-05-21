@@ -8,116 +8,26 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 </head>
 <body>
-	<div class="header">
-		<div><button type="button" id="next" onclick="buttonClick()">Refresh</button></div>
-		<audio controls autoplay id="audio">
-			<source src="./music/dendi-8-bit-super-brat-ya-mario.mp3">
-			<source src="./music/8-bit-chip-i-deyl.mp3">
-			<source src="./music/dendi-8-bit-cherepashki-nindzya.mp3">
-		</audio>
-		<div class="header_right" style="color: red">
-			Score:<div id="score"></div>
-			Score Level:<div id="score_level"></div>
-			Cost box:<div id="cost_open_box"></div>
+	<header>
+		<div class="button"><button type="button" id="refresh" onclick="buttonClick()">REFRESH</button></div>
+		<div class="score_box">
+			<div>Score:</br><input type="text" name="Score"></div>
+			<div>Score Level:</br><input type="text" name="Score_level"></div>
+			<div>Cost Box:</br><input type="text" name="Cost_box"></div>
 		</div>
+	</header>
+	<div id="cube">
+		<div id="grey_box" class="mini_box1"></div>
+		<div id="grey_box" class="mini_box2"></div>
+		<div id="grey_box" class="mini_box3"></div>
+		<div id="grey_box" class="mini_box4"></div>
+		<div id="grey_box" class="mini_box5"></div>
+		<div id="grey_box" class="mini_box6"></div>
+		<div id="grey_box" class="mini_box7"></div>
+		<div id="grey_box" class="mini_box8"></div>
+		<div id="grey_box" class="mini_box9"></div>
 	</div>
-	<div id="box">
-		<div class="boxList" id="BG_game">
-			<div class="miniBox" id="miniBox1">1</div>
-			<div class="miniBox" id="miniBox2">2</div>
-			<div class="miniBox" id="miniBox3">3</div>
-			<div class="miniBox" id="miniBox4">4</div>
-			<div class="miniBox" id="miniBox5">5</div>
-			<div class="miniBox" id="miniBox6">6</div>
-			<div class="miniBox" id="miniBox7">7</div>
-			<div class="miniBox" id="miniBox8">8</div>
-			<div class="miniBox" id="miniBox9">9</div>
-		</div>
-	</div>
-	<div id="words" class="words"></div>
-		<!-- <div id="cube">
-			<div id="box2">
-				<div class="boxList" id="BG_game">
-					<div class="miniBox" id="miniBox1">1</div>
-					<div class="miniBox" id="miniBox2">2</div>
-					<div class="miniBox" id="miniBox3">3</div>
-					<div class="miniBox" id="miniBox4">4</div>
-					<div class="miniBox" id="miniBox5">5</div>
-					<div class="miniBox" id="miniBox6">6</div>
-					<div class="miniBox" id="miniBox7">7</div>
-					<div class="miniBox" id="miniBox8">8</div>
-					<div class="miniBox" id="miniBox9">9</div>
-				</div>
-			</div>
-			<div id="words" class="words"></div>
-		</div>
-		<div id="cube">
-			<div id="box3">
-				<div class="boxList" id="BG_game">
-					<div class="miniBox" id="miniBox1">1</div>
-					<div class="miniBox" id="miniBox2">2</div>
-					<div class="miniBox" id="miniBox3">3</div>
-					<div class="miniBox" id="miniBox4">4</div>
-					<div class="miniBox" id="miniBox5">5</div>
-					<div class="miniBox" id="miniBox6">6</div>
-					<div class="miniBox" id="miniBox7">7</div>
-					<div class="miniBox" id="miniBox8">8</div>
-					<div class="miniBox" id="miniBox9">9</div>
-				</div>
-			</div>
-			<div id="words" class="words"></div>
-		</div>
-		<div id="cube">
-			<div id="box4">
-				<div class="boxList" id="BG_game">
-					<div class="miniBox" id="miniBox1">1</div>
-					<div class="miniBox" id="miniBox2">2</div>
-					<div class="miniBox" id="miniBox3">3</div>
-					<div class="miniBox" id="miniBox4">4</div>
-					<div class="miniBox" id="miniBox5">5</div>
-					<div class="miniBox" id="miniBox6">6</div>
-					<div class="miniBox" id="miniBox7">7</div>
-					<div class="miniBox" id="miniBox8">8</div>
-					<div class="miniBox" id="miniBox9">9</div>
-				</div>
-			</div>
-		</div>
-		<div id="cube">
-			<div id="box5">
-				<div class="boxList" id="BG_game">
-					<div class="miniBox" id="miniBox1">1</div>
-					<div class="miniBox" id="miniBox2">2</div>
-					<div class="miniBox" id="miniBox3">3</div>
-					<div class="miniBox" id="miniBox4">4</div>
-					<div class="miniBox" id="miniBox5">5</div>
-					<div class="miniBox" id="miniBox6">6</div>
-					<div class="miniBox" id="miniBox7">7</div>
-					<div class="miniBox" id="miniBox8">8</div>
-					<div class="miniBox" id="miniBox9">9</div>
-				</div>
-			</div>
-			<div id="words" class="words"></div>
-		</div>
-		<div id="cube">
-			<div id="box6">
-				<div class="boxList" id="BG_game">
-					<div class="miniBox" id="miniBox1">1</div>
-					<div class="miniBox" id="miniBox2">2</div>
-					<div class="miniBox" id="miniBox3">3</div>
-					<div class="miniBox" id="miniBox4">4</div>
-					<div class="miniBox" id="miniBox5">5</div>
-					<div class="miniBox" id="miniBox6">6</div>
-					<div class="miniBox" id="miniBox7">7</div>
-					<div class="miniBox" id="miniBox8">8</div>
-					<div class="miniBox" id="miniBox9">9</div>
-				</div>
-			</div>
-			<div id="words" class="words"></div>
-		</div>
-	</div> -->
-	<!-- <div id="words" class="words">
-
-	</div> -->
+	<div id="words">*</div>
+	<script src="js/script.js"></script>
 </body>
-<script src="./js/script.js"></script>
 </html>

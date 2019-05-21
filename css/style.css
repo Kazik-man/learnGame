@@ -1,120 +1,101 @@
 body {
 	width: 100%;
 	height: 100%;
-	box-sizing: border-box;
-	background: url(../img/InformTechno.JPG) no-repeat fixed;
-	background-size: cover;
+	background: url(../img/fon.JPG)no-repeat fixed;
+	font-size: 20px;
 }
-.header {
+header {
 	display: flex;
 	justify-content: space-between;
+	margin: 50px;
+}
+.score_box {
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+}
+button {
+	width: 120px;
+	height: 30px;
+	border-radius: 7px;
+}
+.button {
+	display: flex;
 	align-items: center;
-	padding: 20px 50px;
+	justify-content: center;
 }
-#next {
-	margin: 20px auto;
-	width: 100px;
-	height: 40px;
-	border-radius: 5px;
+.score_box > div {
+	padding-top: 15px;
 }
-.header_right {
-	display: block;
-
-}
-.header_right > div {
+input {
 	width: 150px;
 	height: 30px;
-	border: 1px solid;
+	border-radius: 10px;
+	text-align: center;
+}
+#cube {
+	width: 600px;
+	height: 600px;
+	border: 2px solid black;
 	border-radius: 5px;
-	background: #fff;
-	margin: 10px 0;
-	font-size: 20px;
-	text-align: center;
-}
-/*#wrapper {
-	position: relative;
-	display: flex;
-	justify-content: center;
-	position: relative;
-}*/
-
-#box {
-	width: 600px;
-	height: 600px;
-	border: 1px solid yellow;
-	margin: 0 auto;
+	background: url(../img/miniki.jpg)no-repeat center;
+	margin: 50px auto;
 	position: relative;
 }
-
-.boxList {
-	width: 600px;
-	height: 600px;
-	position: relative;
-}
-.miniBox {
-	width: 200px;
-	height: 200px;
-	border: 1px solid yellow;
-	font-size: 50px;
-	text-align: center;
+#grey_box {
+	width: 198px;
+	height: 198px;
+	border: 1px solid;
 	background: grey;
 	position: absolute;
+	display: flex;
+	flex-wrap: wrap;
+}
+.mini_box1 {
+	left: 0;
+	top: 0;
+}
+.mini_box2 {
+	left: 33.33%;
+	top: 0;
+}
+.mini_box3 {
+	left: 66.66%;
+	top: 0;
+}
+.mini_box4 {
+	left: 0;
+	top: 33.33%;
+}
+.mini_box5 {
+	left: 33.33%;
+	top: 33.33%;
+}
+.mini_box6 {
+	left: 66.66%;
+	top: 33.33%;
+}
+.mini_box7 {
+	left: 0;
+	top: 66.66%;
+}
+.mini_box8 {
+	left: 33.33%;
+	top: 66.66%;
+}
+.mini_box9 {
+	left: 66.66%;
+	top: 66.66%;
 }
 
-#BG_game {
-	background-image: url('../img/ny.JPG');
-	background-size: cover;
-}
-
-.words {
+#words {
+	width: 50px;
+	height: 50px;
+	border: 1px solid;
+	border-radius: 2px;
+	background: grey;
+	font-size: 62px;
 	display: flex;
 	justify-content: center;
-}
-
-.words_item {
-	height: 50px;
-	border: 1px solid yellow;
-	background: grey;
-	margin: 10px;
-	display: flex;
-	flex-basis: 50px;
-}
-
-
-
-.miniBox:nth-of-type(1) {
-	top: 0;
-	left: 0;
-}
-.miniBox:nth-of-type(2) {
-	top: 0;
-	left: 33%;
-}
-.miniBox:nth-of-type(3) {
-	top: 0;
-	left: 66%;
-}
-.miniBox:nth-of-type(4) {
-	top: 33%;
-	left: 0;
-}
-.miniBox:nth-of-type(5) {
-	top: 33%;
-	left: 33%;
-}
-.miniBox:nth-of-type(6) {
-	top: 33%;
-	left: 66%;
-}
-.miniBox:nth-of-type(7) {
-	top: 66%;
-	left: 0;
-}
-.miniBox:nth-of-type(8) {
-	top: 66%;
-	left: 33%;
-}
-.miniBox:nth-of-type(9) {
-	top: 66%;
-	left: 66%;
+	margin: 0 auto;
 }
