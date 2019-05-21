@@ -1,7 +1,7 @@
 body {
 	width: 100%;
 	height: 100%;
-	background: url(../img/fon.JPG)no-repeat fixed;
+	background: url('../img/fon.JPG')no-repeat fixed;
 	font-size: 20px;
 }
 header {
@@ -26,8 +26,6 @@ button {
 }
 .score_box > div {
 	padding-top: 15px;
-}
-input {
 	width: 150px;
 	height: 30px;
 	border-radius: 10px;
@@ -38,7 +36,7 @@ input {
 	height: 600px;
 	border: 2px solid black;
 	border-radius: 5px;
-	background: url(../img/miniki.jpg)no-repeat center;
+	background: url('../img/miniki.jpg')no-repeat center;
 	margin: 50px auto;
 	position: relative;
 }

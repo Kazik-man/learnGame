@@ -1,5 +1,5 @@
 const object = [
-	{
+    {
         "image": "./img/kiev.jpg",
         "name": "Kiev",
         "count": "400"
@@ -146,23 +146,23 @@ const object = [
     },
 ]
 
-
-const Score = 0;
-const ScoreLevel = object['count'];
+let costBox = 0;
+let score = 0;
+let scoreLevel = object[randomCity]['count'];
 
 function newGame() {
-	$('.grey_box').show();
-	console.log(object.length);
-	// нужно выбрать рандомно элемент
-	let randomCity = getRandomArbitrary(0, object.length - 1);
+    $('.grey_box').show();
+    console.log(object.length);
+    // нужно выбрать рандомно элемент
+    let randomCity = getRandomArbitrary(0, object.length - 1);
 
-	// нужно выбрать рандомно число бокса от 1-9
-	let randomNumber = getRandomArbitrary(1, 9);
+    // нужно выбрать рандомно число бокса от 1-9
+    let randomBoxNumber = getRandomArbitrary(1, 9);
 
-	boxHide(hideRandomBox);
+    boxHide(randomBoxNumber);
 
-	console.log(randomCity, object[randomCity]);
-	console.log(randomNumber);
+    console.log(randomCity, object[randomCity]);
+    console.log(randomBoxNumber);
 }
 
 
@@ -172,26 +172,27 @@ costBoxLvl();
 
 
 function getRandomArbitrary(min, max) {
-	const count = Math.random() * (max - min) + min;
-	
-  	return Math.floor(count);
+    const count = Math.random() * (max - min) + min;
+    
+    return Math.floor(count);
 }
 
 
 function boxHide(hideRandomBox) {
-	$('.grey_box').eq(randomNumber-1).hide();
+    $('.grey_box').eq(hideRandomBox-1).hide();
 }
+
+ $('.grey_box').on("click" function() {
+     costBoxLvl();
+});
 
 function costBoxLvl() {
-	const CostBox = 0;
-	if($('.grey_box').click()) {
-		CostBox = CostBox + 100;
-	}
-	if(CostBox > ScoreLevel) {
-		alert('Game Over');
-	}
+    costBox = costBox + 100;
+    if(costBox > scoreLevel) {
+        alert('Game Over');
+    }
 }
 
-$('.Score').text(Score);
-$('.ScoreLevel').text(ScoreLevel);
-$('.CostBox').text(CostBox);
+$('.Score').text(score);
+$('.ScoreLevel').text(scoreLevel);
+$('.CostBox').text(costBox);
