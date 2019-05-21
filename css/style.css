@@ -42,7 +42,7 @@ input {
 	margin: 50px auto;
 	position: relative;
 }
-#grey_box {
+.grey_box {
 	width: 198px;
 	height: 198px;
 	border: 1px solid;
@@ -51,39 +51,39 @@ input {
 	display: flex;
 	flex-wrap: wrap;
 }
-.mini_box1 {
+#mini_box1 {
 	left: 0;
 	top: 0;
 }
-.mini_box2 {
+#mini_box2 {
 	left: 33.33%;
 	top: 0;
 }
-.mini_box3 {
+#mini_box3 {
 	left: 66.66%;
 	top: 0;
 }
-.mini_box4 {
+#mini_box4 {
 	left: 0;
 	top: 33.33%;
 }
-.mini_box5 {
+#mini_box5 {
 	left: 33.33%;
 	top: 33.33%;
 }
-.mini_box6 {
+#mini_box6 {
 	left: 66.66%;
 	top: 33.33%;
 }
-.mini_box7 {
+#mini_box7 {
 	left: 0;
 	top: 66.66%;
 }
-.mini_box8 {
+#mini_box8 {
 	left: 33.33%;
 	top: 66.66%;
 }
-.mini_box9 {
+#mini_box9 {
 	left: 66.66%;
 	top: 66.66%;
 }
