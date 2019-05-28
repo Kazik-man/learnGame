@@ -146,6 +146,7 @@ const object = [
     },
 ]
 
+let randomCity;
 let costBox = 0;
 let score = 0;
 let scoreLevel = 0;
@@ -154,23 +155,24 @@ function newGame() {
     $('.grey_box').show();
     console.log(object.length);
     // нужно выбрать рандомно элемент
-    let randomCity = getRandomArbitrary(0, object.length - 1);
+    randomCity = getRandomArbitrary(0, object.length - 1);
 
     // нужно выбрать рандомно число бокса от 1-9
     let randomBoxNumber = getRandomArbitrary(1, 9);
 
     boxHide(randomBoxNumber);
 
+
     console.log(randomCity, object[randomCity]);
     console.log(randomBoxNumber);
 
     scoreLevel = object[randomCity]['count'];
+    myWords();
 }
 
 
 newGame();
 costBoxLvl();
-
 
 
 function getRandomArbitrary(min, max) {
@@ -198,3 +200,10 @@ function costBoxLvl() {
 $('.score').text(score);
 $('.scoreLevel').text(scoreLevel);
 $('.costBox').text(costBox);
+
+function myWords() {
+    let word = object[randomCity]['name'];
+    let res = word.split("");
+    document.getElementById("words").innerHTML = res;
+}
+

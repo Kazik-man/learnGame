@@ -9,11 +9,6 @@ header {
 	justify-content: space-between;
 	margin: 50px;
 }
-.score_box {
-	display: flex;
-	flex-direction: column;
-	padding: 20px;
-}
 button {
 	width: 120px;
 	height: 30px;
@@ -24,10 +19,21 @@ button {
 	align-items: center;
 	justify-content: center;
 }
+.score_box {
+	display: flex;
+	flex-direction: inherit;
+	text-align: center;
+	padding: 20px 50px;
+}
 .score_box > div {
-	padding-top: 15px;
-	width: 150px;
+	padding: 5px;
+	width: 130px;
 	height: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: silver;
+	border: 1px solid;
 	border-radius: 10px;
 	text-align: center;
 }
