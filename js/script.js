@@ -168,6 +168,7 @@ function newGame() {
 
     scoreLevel = object[randomCity]['count'];
     myWords();
+    plusDiv();
 }
 
 
@@ -201,9 +202,15 @@ $('.score').text(score);
 $('.scoreLevel').text(scoreLevel);
 $('.costBox').text(costBox);
 
+//эта функция разбивает слово на буквы
 function myWords() {
     let word = object[randomCity]['name'];
     let res = word.split("");
     document.getElementById("words").innerHTML = res;
 }
 
+//функция создания динамически div для количества букв в нашем слове
+function plusDiv() {
+    let newDivEl = $('#words');
+    newDivEl.append('<div id="words ' + newDivEl.children().length + 1 + '"></div>');
+}
