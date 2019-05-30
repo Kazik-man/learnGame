@@ -151,8 +151,15 @@ let costBox = 0;
 let score = 0;
 let scoreLevel = 0;
 
+/**
+ * Our all constants
+ * **/
+
+const BOXES = $('.grey_box'),
+    WORDS_CONTAINER = $('#words');
+
 function newGame() {
-    $('.grey_box').show();
+    BOXES.show();
     console.log(object.length);
     // нужно выбрать рандомно элемент
     randomCity = getRandomArbitrary(0, object.length - 1);
@@ -162,13 +169,11 @@ function newGame() {
 
     boxHide(randomBoxNumber);
 
-
     console.log(randomCity, object[randomCity]);
     console.log(randomBoxNumber);
 
     scoreLevel = object[randomCity]['count'];
-    myWords();
-    plusDiv();
+    initWords();
 }
 
 
@@ -178,7 +183,7 @@ costBoxLvl();
 
 function getRandomArbitrary(min, max) {
     const count = Math.random() * (max - min) + min;
-    
+
     return Math.floor(count);
 }
 
@@ -187,7 +192,7 @@ function boxHide(hideRandomBox) {
     $('.grey_box').eq(hideRandomBox-1).hide();
 }
 
-$('.grey_box').on("click", function () {
+BOXES.on("click", function () {
      costBoxLvl();
 });
 
@@ -203,14 +208,19 @@ $('.scoreLevel').text(scoreLevel);
 $('.costBox').text(costBox);
 
 //эта функция разбивает слово на буквы
-function myWords() {
-    let word = object[randomCity]['name'];
-    let res = word.split("");
-    document.getElementById("words").innerHTML = res;
+function initWords() {
+    const word = object[randomCity]['name'].split('');
+    document.getElementById("words").innerHTML = word;
+    generateWordsContainer(word);
+}
+
+function generateWordsContainer( wordArr ) {
+    WORDS_CONTAINER.empty();
+    wordArr.forEach( () => WORDS_CONTAINER.append('<div class="letter"></div>'));
 }
 
 //функция создания динамически div для количества букв в нашем слове
-function plusDiv() {
-    let newDivEl = $('#words');
-    newDivEl.append('<div id="words ' + newDivEl.children().length + 1 + '"></div>');
+
+function refreshGame() {
+    console.log('refresh game');
 }
