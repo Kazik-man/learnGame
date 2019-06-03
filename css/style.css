@@ -21,7 +21,7 @@ button {
 }
 .score_box {
 	display: flex;
-	flex-direction: inherit;
+	align-items: center;
 	text-align: center;
 	padding: 20px 50px;
 }
@@ -36,15 +36,16 @@ button {
 	border: 1px solid;
 	border-radius: 10px;
 	text-align: center;
+	margin-right: 20px;
 }
 #cube {
 	width: 600px;
 	height: 600px;
 	border: 2px solid black;
 	border-radius: 5px;
-
 	margin: 50px auto;
 	position: relative;
+	background-size: cover;
 }
 .grey_box {
 	width: 198px;

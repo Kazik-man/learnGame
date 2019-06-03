@@ -156,83 +156,85 @@ let scoreLevel = 0;
  * **/
 
 const BOXES = $('.grey_box'),
-    WORDS_CONTAINER = $('#words');
+    WORDS_CONTAINER = $('#words'),
+    MAIN_PHOTO = $('#cube');
 
-let myImage = $('#cube');
+let LEVEL_CONFIG;
 
 function newGame() {
+    costBox = 0;
     BOXES.show();
-    myImage.show();
-    console.log(object.length);
     // нужно выбрать рандомно элемент
     randomCity = getRandomArbitrary(0, object.length - 1);
+    // rewrite out object with current city
+    LEVEL_CONFIG = object[randomCity];
 
     // нужно выбрать рандомно число бокса от 1-9
     let randomBoxNumber = getRandomArbitrary(1, 9);
 
     boxHide(randomBoxNumber);
 
-    console.log(randomCity, object[randomCity]);
+    console.log(randomCity, LEVEL_CONFIG);
     console.log(randomBoxNumber);
 
-    scoreLevel = object[randomCity]['count'];
+    scoreLevel = LEVEL_CONFIG['count'];
     initWords();
     bagBG();
+    costBoxLvl();
 }
 
 function bagBG() {
-  document.getElementById("cube").style.backgroundImage = base.json(object[randomCity]['image']);
-  // "url(object[randomCity]['image'])";
-  console.log(object[randomCity]['image']);
+    MAIN_PHOTO.css('background-image', `url(${LEVEL_CONFIG['image']})`);
 }
 
 newGame();
-costBoxLvl();
-
 
 
 function getRandomArbitrary(min, max) {
     const count = Math.random() * (max - min) + min;
-
     return Math.floor(count);
 }
 
 // рандомно прячет один квадрат
 function boxHide(hideRandomBox) {
-    $('.grey_box').eq(hideRandomBox-1).hide();
+    BOXES.eq(hideRandomBox - 1).hide();
 }
 
 BOXES.on("click", function () {
-    boxHide();
-    costBoxLvl();
+    if ( costBoxLvl() === true ) {
+        alert('Game over');
+    } else {
+        $(this).hide();
+    }
 });
 
 function costBoxLvl() {
-    costBox = costBox + 100;
-    if(costBox > scoreLevel) {
-        alert("You don't no more open");
-    }
+    costBox += 100;
+    updateCounts();
+    return costBox > scoreLevel;
 }
 
-$('.score').text(score);
-$('.scoreLevel').text(scoreLevel);
-$('.costBox').text(costBox);
+function updateCounts() {
+    $('.score').text(score);
+    $('.costBox').text(costBox);
+    $('.scoreLevel').text(scoreLevel);
+}
+
 
 //эта функция разбивает слово на буквы
 function initWords() {
     const word = object[randomCity]['name'].split('');
-    document.getElementById("words").innerHTML = word;
     generateWordsContainer(word);
 }
 
-function generateWordsContainer( wordArr ) {
+function generateWordsContainer(wordArr) {
     WORDS_CONTAINER.empty();
-    wordArr.forEach( () => WORDS_CONTAINER.append('<div class="letter"></div>'));
+    wordArr.forEach(() => WORDS_CONTAINER.append('<div class="letter"></div>'));
 }
 
 //функция создания динамически div для количества букв в нашем слове
 
 function refreshGame() {
-    Location.reload(object[randomCity]);
+    newGame();
     console.log('refresh game');
 }
