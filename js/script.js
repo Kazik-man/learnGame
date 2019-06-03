@@ -158,8 +158,11 @@ let scoreLevel = 0;
 const BOXES = $('.grey_box'),
     WORDS_CONTAINER = $('#words');
 
+let myImage = $('#cube');
+
 function newGame() {
     BOXES.show();
+    myImage.show();
     console.log(object.length);
     // нужно выбрать рандомно элемент
     randomCity = getRandomArbitrary(0, object.length - 1);
@@ -174,11 +177,18 @@ function newGame() {
 
     scoreLevel = object[randomCity]['count'];
     initWords();
+    bagBG();
 }
 
+function bagBG() {
+  document.getElementById("cube").style.backgroundImage = base.json(object[randomCity]['image']);
+  // "url(object[randomCity]['image'])";
+  console.log(object[randomCity]['image']);
+}
 
 newGame();
 costBoxLvl();
+
 
 
 function getRandomArbitrary(min, max) {
@@ -187,19 +197,20 @@ function getRandomArbitrary(min, max) {
     return Math.floor(count);
 }
 
-
+// рандомно прячет один квадрат
 function boxHide(hideRandomBox) {
     $('.grey_box').eq(hideRandomBox-1).hide();
 }
 
 BOXES.on("click", function () {
-     costBoxLvl();
+    boxHide();
+    costBoxLvl();
 });
 
 function costBoxLvl() {
     costBox = costBox + 100;
     if(costBox > scoreLevel) {
-        alert('Game Over');
+        alert("You don't no more open");
     }
 }
 
@@ -222,5 +233,6 @@ function generateWordsContainer( wordArr ) {
 //функция создания динамически div для количества букв в нашем слове
 
 function refreshGame() {
+    Location.reload(object[randomCity]);
     console.log('refresh game');
 }
