@@ -147,9 +147,11 @@ const object = [
 ]
 
 let randomCity;
-let costBox = 0;
 let score = 0;
+let costBox = 0;
 let scoreLevel = 0;
+
+
 
 /**
  * Our all constants
@@ -160,6 +162,7 @@ const BOXES = $('.grey_box'),
     MAIN_PHOTO = $('#cube');
 
 let LEVEL_CONFIG;
+
 
 function newGame() {
     costBox = 0;
@@ -188,6 +191,7 @@ function bagBG() {
 }
 
 newGame();
+keyWord();
 
 
 function getRandomArbitrary(min, max) {
@@ -202,7 +206,9 @@ function boxHide(hideRandomBox) {
 
 BOXES.on("click", function () {
     if ( costBoxLvl() === true ) {
-        alert('Game over');
+        alert("You don't more open");
+        costBox -= 100;
+        updateCounts();
     } else {
         $(this).hide();
     }
@@ -230,6 +236,7 @@ function initWords() {
 function generateWordsContainer(wordArr) {
     WORDS_CONTAINER.empty();
     wordArr.forEach(() => WORDS_CONTAINER.append('<div class="letter"></div>'));
+    console.log(wordArr);
 }
 
 //функция создания динамически div для количества букв в нашем слове
@@ -237,4 +244,27 @@ function generateWordsContainer(wordArr) {
 function refreshGame() {
     newGame();
     console.log('refresh game');
+}
+
+function keyWord() {
+   
+}
+
+$(document).on( 'keydown', function(event) {
+    let test = event.key;
+
+    funWord(test)
+
+    let letterBoxMas = [];
+
+    for (let i = 'A'; i <= 'z'; i++) {
+        
+        letterBoxMas.add(i);
+    }
+
+});
+
+function funWord(getTest) {
+
+    $('.letter').text(getTest)
 }
